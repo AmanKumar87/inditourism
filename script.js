@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       header.classList.remove("header-scrolled");
     }
-  });
+  }); // 2. On-scroll reveal animations
 
-  // 2. On-scroll reveal animations
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -21,9 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { threshold: 0.1 }
   );
   const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
-  elementsToAnimate.forEach((el) => observer.observe(el));
+  elementsToAnimate.forEach((el) => observer.observe(el)); // 3. "Coming Soon" Modal Logic
 
-  // 3. "Coming Soon" Modal Logic
   const comingSoonButtons = document.querySelectorAll(".coming-soon-button");
   comingSoonButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -45,15 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalContent = document.createElement("div");
     modalContent.className = "modal-content";
     modalContent.innerHTML = `
-            <button class="modal-close">&times;</button>
-            <h3>${styleName} Journeys</h3>
-            <p>Our bespoke ${styleName.toLowerCase()} experiences are being perfected by our curators and will be launching soon.</p>
-            <p>Be the first to know. Enter your email for exclusive launch updates.</p>
-            <form class="email-form">
-                <input type="email" placeholder="your.email@example.com" required>
-                <button type="submit" class="btn btn-primary">Notify Me</button>
-            </form>
-        `;
+            <button class="modal-close">&times;</button>
+            <h3>${styleName} Journeys</h3>
+            <p>Our bespoke ${styleName.toLowerCase()} experiences are being perfected by our curators and will be launching soon.</p>
+            <p>Be the first to know. Enter your email for exclusive launch updates.</p>
+            <form class="email-form">
+                <input type="email" placeholder="your.email@example.com" required>
+                <button type="submit" class="btn btn-primary">Notify Me</button>
+            </form>
+        `;
     document.body.appendChild(modalOverlay);
     setTimeout(() => modalOverlay.classList.add("is-visible"), 10);
     const closeModal = () => {
@@ -79,9 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
         modalContent.innerHTML = `<h3>Thank You!</h3><p>We've added you to our exclusive list.</p>`;
         setTimeout(closeModal, 3000);
       });
-  }
+  } // 4. Interactive Map Tooltip Logic
 
-  // 4. Interactive Map Tooltip Logic
   const mapDots = document.querySelectorAll(".map-dot");
   const tooltip = document.getElementById("map-tooltip");
   if (mapDots.length > 0 && tooltip) {
@@ -96,9 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
         tooltip.classList.remove("is-visible");
       });
     });
-  }
+  } // 5. Interactive Map FILTERING Logic
 
-  // 5. Interactive Map FILTERING Logic
   const filterContainer = document.querySelector(".map-filters");
   if (filterContainer) {
     filterContainer.addEventListener("click", function (e) {
@@ -116,9 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
-  }
+  } // 6. Hero Video Slideshow Logic
 
-  // 6. Hero Video Slideshow Logic
   const videoElement1 = document.getElementById("video-1");
   const videoElement2 = document.getElementById("video-2");
   if (videoElement1 && videoElement2) {
@@ -140,5 +135,17 @@ document.addEventListener("DOMContentLoaded", function () {
       activeVideo = inactiveVideo;
       inactiveVideo = temp;
     }, 5000);
+  }
+  // 7. Quick Link Card Slideshow Logic
+  const slideshowContainer = document.querySelector(".slideshow-container");
+  if (slideshowContainer) {
+    const slides = slideshowContainer.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }, 4000); // Change image every 4 seconds
   }
 });

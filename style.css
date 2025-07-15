@@ -32,9 +32,9 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  max-width: 85vw; /* This makes the container 80% of the viewport width */
+  margin: 0 auto; /* This automatically centers it, leaving 10vw on each side */
+  padding: 0 2rem; /* Keeps a safe inner padding */
 }
 
 .section-title {
@@ -47,12 +47,12 @@ body {
 }
 
 .section-subtitle {
-  text-align: center;
-  max-width: 600px;
-  margin: -2rem auto 3rem;
+  max-width: 900px;
+  margin: -1.5rem auto 3rem; /* Adjusted margin for better spacing */
   font-size: 1.1rem;
+  text-align: center; /* Ensures text is always centered */
+  line-height: 1.7;
 }
-
 /* =================================
    HEADER & NAVIGATION
    ================================= */
@@ -230,16 +230,22 @@ body {
 /* =================================
    OUR TOURISM TYPE & CARD STYLING (FIXED)
    ================================= */
-.tourism-styles,
+.tourism-styles {
+  background-color: #e5e4e2;
+  padding: 6rem 0;
+}
 .difference,
 .testimonials,
 .journal,
-.responsibility,
 .interactive-map,
 .reviews {
+  background-color: #fdf6e3;
   padding: 6rem 0;
 }
-
+.responsibility {
+  background-color: #e5e4e2;
+  padding: 6rem 0;
+}
 .styles-grid {
   display: flex;
   flex-wrap: wrap;
@@ -430,13 +436,14 @@ body {
 /* =================================
    ABOUT US SECTION
    ================================= */
+/* =================================
+   ABOUT US SECTION (LIGHT THEME)
+   ================================= */
 .about-us {
   padding: 6rem 0;
-}
+  background-color: #f3dfbf; /* A clean white background */
 
-/* Helper class for dark backgrounds */
-.bg-dark {
-  background-color: var(--color-text-dark);
+  margin-top: 6rem;
 }
 
 .about-us-grid {
@@ -447,32 +454,35 @@ body {
 
 @media (min-width: 992px) {
   .about-us-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1.2fr 0.8fr; /* Gives more space to text, making image smaller */
     align-items: center;
     gap: 5rem;
   }
 }
 
 .about-us-text .sub-title {
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: justify;
 }
 
 .about-us-text .section-title {
-  color: #fff;
-  text-align: left;
+  color: #07004d;
+  text-align: center; /* Changed from left to center */
   font-size: 2.8rem;
   margin-bottom: 2rem;
   line-height: 1.2;
+  font-weight: bolder;
 }
 
 .about-us-text p {
-  color: #ccc;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  color: #777; /* Changed to a standard dark grey */
+  font-size: 1.3rem;
+  line-height: 1.5;
   margin-bottom: 2rem;
+  text-align: justify; /* This line justifies the text */
 }
 
 .about-us-image img {
@@ -900,6 +910,7 @@ body {
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
+    text-align: center;
   }
   .hero-content h1 {
     font-size: 2.5rem;
@@ -971,4 +982,347 @@ body {
 /* Journal category button already looks good, but we can ensure its text is dark */
 .journal-category {
   color: var(--color-text-dark) !important;
+}
+/* =================================
+  QUICK LINKS SECTION (NEW)
+  ================================= */
+/* =================================
+  QUICK LINKS SECTION (MODIFIED)
+  ================================= */
+/* =================================
+  QUICK LINKS SECTION (MODIFIED)
+  ================================= */
+/* =================================
+  QUICK LINKS SECTION (MODIFIED)
+  ================================= */
+/* =================================
+  QUICK LINKS SECTION (MODIFIED)
+  ================================= */
+.quick-links {
+  background-color: #e5e4e2;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.quick-links .section-title {
+  color: var(--color-primary);
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quick-link-card {
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: var(--color-text-dark);
+  font-family: var(--font-heading);
+  text-align: center;
+  min-height: 250px;
+}
+
+.quick-link-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* CORRECTED: Specific style for the tall card */
+.quick-link-card.card-tall {
+  grid-row: span 2;
+  height: 100%;
+  padding: 0; /* Remove padding to allow slideshow to fill the card */
+}
+
+/* Card Colors */
+.card-blue {
+  background-color: #d1e2f4;
+  color: #3b5998;
+}
+.card-purple {
+  background-color: #d8c7e3;
+  color: #6a4c93;
+}
+/* ... other card colors remain unchanged ... */
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+  .quick-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Reset the tall card for a 2-column layout */
+  .quick-link-card.card-tall {
+    grid-row: auto;
+  }
+}
+/* Styles for background images inside quick link cards */
+.quick-link-card .card-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image cover the area without distortion */
+  z-index: 1; /* Place it behind the text */
+  border-radius: 20px; /* Match the card's border radius */
+  filter: brightness(0.7); /* Slightly darken the image for text readability */
+}
+
+/* Adjust h3 when there is a background image */
+.quick-link-card:has(.card-bg-image) h3 {
+  position: relative;
+  z-index: 2; /* Ensure text is on top of the image */
+  color: #fff; /* Make text white for better contrast */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Add a shadow to make it pop */
+  padding: 0 1rem; /* Add some horizontal padding */
+  justify-content: flex-end;
+}
+.quick-link-card.has-bg-image {
+  justify-content: flex-end;
+}
+
+/* This styles the background image itself */
+.quick-link-card .card-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 20px;
+  filter: brightness(0.7);
+}
+
+/* This styles the text to make it readable on top of the image */
+.quick-link-card.has-bg-image h3 {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  padding: 0 1rem;
+}
+@media (max-width: 576px) {
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =================================
+  SLIDESHOW STYLES FOR QUICK LINK CARD
+  ================================= */
+.quick-link-card .slideshow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slideshow-container .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow-container .slide.active {
+  opacity: 1;
+}
+/* Card Colors */
+.card-blue {
+  background-color: #d1e2f4;
+  color: #3b5998;
+}
+.card-purple {
+  background-color: #d8c7e3;
+  color: #6a4c93;
+}
+.card-gold {
+  background-color: #c9a759;
+  color: #4a3e2e;
+}
+.card-orange {
+  background-color: #f78c52;
+  color: #3f2a1e;
+}
+.card-orange-dark {
+  background-color: #f78c52;
+  color: #3f2a1e;
+}
+.card-light-blue {
+  background-color: #d1e2f4;
+  color: #3b5998;
+}
+.card-tan {
+  background-color: #f0e6d6;
+  color: #6d5b4a;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+  .quick-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Reset the tall card for a 2-column layout to avoid awkward empty space */
+  .quick-link-card.card-tall {
+    grid-row: auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* New styles for the two-column footer layout */
+.footer-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Give more space to the text content */
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem; /* Space before the copyright line */
+}
+
+.footer-image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Make sure the existing footer grid adapts */
+.main-footer .footer-grid {
+  margin-bottom: 0; /* Remove original margin */
+}
+
+/* Add this to your main responsive section */
+@media (max-width: 768px) {
+  .footer-layout {
+    grid-template-columns: 1fr; /* Stack the image and content on smaller screens */
+    text-align: center;
+  }
+
+  .footer-grid {
+    text-align: left; /* Keep grid text left-aligned */
+  }
+}
+/* =================================
+  SUMMER DEALS PROMO SECTION
+  ================================= */
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.deal-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.deal-image {
+  position: relative;
+  height: 250px;
+}
+
+.deal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deal-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.deal-overlay-text {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  color: #fff;
+  z-index: 2;
+}
+
+.deal-overlay-text h3 {
+  font-family: var(--font-heading);
+  margin: 0 0 0.25rem 0;
+  font-size: 1.7rem;
+}
+
+.deal-overlay-text span {
+  font-size: 1rem;
+}
+
+.deal-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ensures cards in a row have the same height */
+}
+
+.deal-content ul {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.deal-content ul li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.deal-content ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.deal-content .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive adjustments for deals section */
+@media (max-width: 992px) {
+  .deals-grid {
+    grid-template-columns: 1fr;
+  }
 }
