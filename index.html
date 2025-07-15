@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Journeys - Curated Indian Experiences</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <a href="#" class="logo">Aura Journeys</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Experiences</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-video-bg">
+          <video autoplay loop muted playsinline>
+            <source src="assets/hero-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="hero-content">
+          <h1 class="animate-on-scroll">Your Unforgettable India Awaits</h1>
+          <p class="animate-on-scroll">
+            Bespoke journeys in adventure, wellness, and culture, curated by
+            local insiders.
+          </p>
+          <a href="#tourism-styles" class="btn btn-primary animate-on-scroll"
+            >Explore Our Experiences</a
+          >
+        </div>
+      </section>
+
+      <section id="tourism-styles" class="tourism-styles">
+        <div class="container">
+          <h2 class="section-title animate-on-scroll">Our Curation Styles</h2>
+          <div class="styles-grid">
+            <div class="style-card animate-on-scroll">
+              <img
+                src="https://images.unsplash.com/photo-1593396495542-0542337d0044?q=80&w=1974"
+                alt="Adventure Tourism"
+              />
+              <div class="card-content">
+                <h3>Adventure Tourism</h3>
+                <p>
+                  Himalayan treks, wildlife safaris, and adrenaline-fueled
+                  escapades.
+                </p>
+              </div>
+            </div>
+            <div class="style-card animate-on-scroll">
+              <img
+                src="https://images.unsplash.com/photo-1594757657252-9a273760ab8a?q=80&w=1974"
+                alt="Agro Tourism"
+              />
+              <div class="card-content">
+                <h3>Agro Tourism</h3>
+                <p>
+                  Immerse yourself in the tranquility of spice plantations and
+                  organic farms.
+                </p>
+              </div>
+            </div>
+            <div
+              class="style-card coming-soon animate-on-scroll"
+              data-style="Wedding"
+            >
+              <span class="badge">Coming Soon</span>
+              <img
+                src="https://images.unsplash.com/photo-1607914651332-0a392b3d65d4?q=80&w=1974"
+                alt="Wedding Tourism"
+              />
+              <div class="card-content">
+                <h3>Wedding Tourism</h3>
+                <p>From royal palace ceremonies to serene beach vows.</p>
+              </div>
+            </div>
+            <div
+              class="style-card coming-soon animate-on-scroll"
+              data-style="Cultural Heritage"
+            >
+              <span class="badge">Coming Soon</span>
+              <img
+                src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071"
+                alt="Cultural Heritage"
+              />
+              <div class="card-content">
+                <h3>Cultural Heritage</h3>
+                <p>
+                  Private tours of ancient forts, temples, and timeless
+                  traditions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="interactive-map">
+        <div class="container">
+          <h2 class="section-title animate-on-scroll">Discover Our India</h2>
+          <p class="section-subtitle animate-on-scroll">
+            From the soaring Himalayas to the tranquil backwaters, our expertise
+            spans the subcontinent. Hover over a region to explore.
+          </p>
+          <div class="map-container animate-on-scroll">
+            <img
+              src="https://i.imgur.com/gcsDk1v.png"
+              alt="Stylized map of India"
+              class="map-image"
+            />
+            <div
+              class="map-dot"
+              data-region="Himalayas (Ladakh, Himachal)"
+              style="top: 15%; left: 45%"
+            ></div>
+            <div
+              class="map-dot"
+              data-region="Golden Triangle (Delhi, Agra, Jaipur)"
+              style="top: 35%; left: 42%"
+            ></div>
+            <div
+              class="map-dot"
+              data-region="Kerala's Backwaters"
+              style="top: 82%; left: 40%"
+            ></div>
+            <div
+              class="map-dot"
+              data-region="Goa & The Coast"
+              style="top: 65%; left: 35%"
+            ></div>
+            <div
+              class="map-dot"
+              data-region="Eastern India (Darjeeling, Sikkim)"
+              style="top: 38%; left: 80%"
+            ></div>
+            <div id="map-tooltip"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="difference">
+        <div class="container">
+          <h2 class="section-title animate-on-scroll">The Aura Difference</h2>
+          <div class="difference-grid">
+            <div class="diff-card animate-on-scroll">
+              <i class="fas fa-map-marked-alt"></i>
+              <h3>Local Insiders</h3>
+              <p>
+                Our Journey Curators are passionate locals who reveal the hidden
+                gems of their homeland.
+              </p>
+            </div>
+            <div class="diff-card animate-on-scroll">
+              <i class="fas fa-drafting-compass"></i>
+              <h3>Perfectly Tailored</h3>
+              <p>
+                Every itinerary is a unique masterpiece, crafted to match your
+                personal travel dreams.
+              </p>
+            </div>
+            <div class="diff-card animate-on-scroll">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Seamless & Safe</h3>
+              <p>
+                Your comfort and safety are our highest priority, from the first
+                hello to the final farewell.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title animate-on-scroll">
+            Stories from Our Travelers
+          </h2>
+          <div class="testimonial-card animate-on-scroll">
+            <blockquote>
+              “This wasn't a trip; it was an experience woven into the fabric of
+              Kerala. The attention to detail and private access Aura Journeys
+              provided was simply unparalleled. We are forever changed.”
+            </blockquote>
+            <div class="traveler-info">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964"
+                alt="Happy traveler"
+              />
+              <cite>— Eleanor Vance, New York</cite>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="journal">
+        <div class="container">
+          <h2 class="section-title animate-on-scroll">
+            From Our Travel Journal
+          </h2>
+          <div class="journal-grid">
+            <a href="#" class="journal-card animate-on-scroll">
+              <div class="journal-image">
+                <img
+                  src="https://images.unsplash.com/photo-1598423432729-e14a27521564?q=80&w=2070"
+                  alt="A quiet moment in Varanasi"
+                />
+              </div>
+              <div class="journal-content">
+                <span class="journal-category">Culture</span>
+                <h3>Finding Serenity: A Guide to Varanasi's Ghats</h3>
+                <p>
+                  Beyond the spectacle, discover the quiet rituals and profound
+                  spirituality that define life on the Ganges...
+                </p>
+              </div>
+            </a>
+            <a href="#" class="journal-card animate-on-scroll">
+              <div class="journal-image">
+                <img
+                  src="https://images.unsplash.com/photo-1626532292113-9a42b3679f2e?q=80&w=1964"
+                  alt="Spices at a market"
+                />
+              </div>
+              <div class="journal-content">
+                <span class="journal-category">Cuisine</span>
+                <h3>The Spice Notes: A Culinary Journey Through Kerala</h3>
+                <p>
+                  From cardamom to clove, we explore the fragrant plantations
+                  that have drawn traders to these shores for centuries...
+                </p>
+              </div>
+            </a>
+            <a href="#" class="journal-card animate-on-scroll">
+              <div class="journal-image">
+                <img
+                  src="https://images.unsplash.com/photo-1609349838343-9f3c248b3213?q=80&w=2070"
+                  alt="A person trekking in the Himalayas"
+                />
+              </div>
+              <div class="journal-content">
+                <span class="journal-category">Adventure</span>
+                <h3>Packing for the Peaks: An Essential Himalayan Trek List</h3>
+                <p>
+                  Our expert curators share their non-negotiable essentials for
+                  a safe and comfortable high-altitude adventure...
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="responsibility">
+        <div class="container">
+          <div class="responsibility-content">
+            <div class="responsibility-text animate-on-scroll">
+              <h2 class="section-title" style="text-align: left">
+                Responsible Journeys
+              </h2>
+              <h3>Our Conscientious Pledge</h3>
+              <p>
+                We believe that travel is a force for good. It is our privilege
+                to create journeys that not only delight our guests but also
+                honor the destinations we visit. We are committed to supporting
+                local communities, preserving cultural heritage, and protecting
+                the pristine environments that make India so extraordinary.
+              </p>
+              <a href="#" class="btn-link"
+                >Learn About Our Impact <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+            <div class="responsibility-image animate-on-scroll">
+              <img
+                src="https://images.unsplash.com/photo-1618374509394-3606c0aaf289?q=80&w=1964"
+                alt="Hands holding a young plant"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>Aura Journeys</h4>
+            <p>
+              Crafting authentic, bespoke travel experiences across the Indian
+              subcontinent.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Journal</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Experiences</h4>
+            <ul>
+              <li><a href="#">Adventure</a></li>
+              <li><a href="#">Agro</a></li>
+              <li><a href="#">Wellness</a></li>
+              <li><a href="#">Culture</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Aura Journeys. All Rights Reserved. Designed with
+            passion in Ludhiana.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

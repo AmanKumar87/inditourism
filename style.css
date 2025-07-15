@@ -1,0 +1,609 @@
+/* =================================
+   GLOBAL STYLES & CSS VARIABLES
+   ================================= */
+:root {
+  --color-primary: #005b5b; /* Deep Teal */
+  --color-secondary: #b85c38; /* Terracotta */
+  --color-accent: #fd8d14; /* Marigold Orange */
+  --color-background: #fdf6e3; /* Sand / Off-White */
+  --color-text-dark: #2d2a26; /* Charcoal */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Lato", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: -2rem auto 3rem;
+  font-size: 1.1rem;
+}
+
+/* =================================
+   HEADER & NAVIGATION
+   ================================= */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Scrolled header style */
+.header-scrolled {
+  background-color: rgba(0, 91, 91, 0.95);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =================================
+   HERO SECTION
+   ================================= */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.hero-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+}
+
+.btn-primary:hover {
+  background-color: #ff9f2c;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(253, 141, 20, 0.2);
+}
+
+/* =================================
+   TOURISM STYLES & CARD STYLING
+   ================================= */
+.tourism-styles,
+.difference,
+.testimonials,
+.journal,
+.responsibility,
+.interactive-map {
+  padding: 6rem 0;
+}
+
+.styles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.style-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.style-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.style-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.style-card .card-content {
+  padding: 1.5rem;
+}
+
+.style-card h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.style-card.coming-soon img {
+  filter: grayscale(80%);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-secondary);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 10;
+}
+
+/* =================================
+   INTERACTIVE MAP
+   ================================= */
+.interactive-map {
+  background-color: #fff;
+}
+.map-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+}
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.map-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 rgba(253, 141, 20, 1);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(253, 141, 20, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(253, 141, 20, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 141, 20, 0);
+  }
+}
+#map-tooltip {
+  position: absolute;
+  background: var(--color-text-dark);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -150%);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+#map-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =================================
+   THE AURA DIFFERENCE
+   ================================= */
+.difference {
+  background-color: var(--color-background); /* Back to default */
+}
+.difference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  text-align: center;
+}
+.diff-card i {
+  font-size: 3rem;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+.diff-card h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* =================================
+   TESTIMONIALS
+   ================================= */
+.testimonials {
+  background-color: var(--color-secondary);
+}
+.testimonial-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  color: var(--color-text-dark);
+  padding: 3rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.testimonial-card blockquote {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  border: none;
+}
+.traveler-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.traveler-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+}
+.traveler-info cite {
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* =================================
+   TRAVEL JOURNAL
+   ================================= */
+.journal {
+  background: #fff;
+}
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.journal-card {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  background: var(--color-background);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.journal-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+.journal-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.journal-content {
+  padding: 1.5rem;
+}
+.journal-category {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  padding: 0.2rem 0.7rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.journal-content h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* =================================
+   RESPONSIBLE JOURNEYS
+   ================================= */
+.responsibility-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.responsibility-text h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-secondary);
+}
+.responsibility-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+.btn-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  position: relative;
+}
+.btn-link i {
+  transition: transform 0.3s ease;
+}
+.btn-link:hover i {
+  transform: translateX(5px);
+}
+
+/* =================================
+   FOOTER
+   ================================= */
+.main-footer {
+  background: var(--color-text-dark);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.footer-column h4 {
+  font-family: var(--font-heading);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.footer-column p {
+  margin-bottom: 1rem;
+}
+.footer-column ul {
+  list-style: none;
+}
+.footer-column a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+.footer-column a:hover {
+  color: var(--color-accent);
+}
+.social-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* =================================
+   ANIMATIONS & MODAL
+   ================================= */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-content {
+  background: var(--color-background);
+  padding: 3rem;
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.is-visible .modal-content {
+  transform: scale(1);
+}
+.modal-content h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.modal-content p {
+  margin-bottom: 1.5rem;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.email-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .main-nav {
+    display: none;
+  } /* Add hamburger menu JS later */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .responsibility-content {
+    grid-template-columns: 1fr;
+  }
+  .responsibility-image {
+    grid-row: 1;
+    margin-bottom: 2rem;
+  }
+}
