@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aura Journeys - Curated Indian Experiences</title>
+    <title>IndiTourism - Curated Indian Experiences</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,13 +22,13 @@
   <body>
     <header class="main-header">
       <div class="container">
-        <a href="#" class="logo">Aura Journeys</a>
+        <a href="#" class="logo">IndiTourism</a>
         <nav class="main-nav">
           <ul>
             <li><a href="#">Experiences</a></li>
             <li><a href="#">Our Story</a></li>
-            <li><a href="#">Journal</a></li>
             <li><a href="#">Contact</a></li>
+            <li><a href="#" class="btn btn-primary">Start Your Tour</a></li>
           </ul>
         </nav>
       </div>
@@ -37,9 +37,18 @@
     <main>
       <section class="hero">
         <div class="hero-video-bg">
-          <video autoplay loop muted playsinline>
-            <source src="assets/hero-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            id="video-1"
+            class="hero-video"
+          >
+            <source src="assets/videos/1.mp4" type="video/mp4" />
+          </video>
+          <video loop muted playsinline id="video-2" class="hero-video">
+            <source src="assets/videos/2.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="hero-content">
@@ -56,115 +65,243 @@
 
       <section id="tourism-styles" class="tourism-styles">
         <div class="container">
-          <h2 class="section-title animate-on-scroll">Our Curation Styles</h2>
+          <h2 class="section-title animate-on-scroll">Our Tourism Types</h2>
           <div class="styles-grid">
-            <div class="style-card animate-on-scroll">
-              <img
-                src="https://images.unsplash.com/photo-1593396495542-0542337d0044?q=80&w=1974"
-                alt="Adventure Tourism"
-              />
-              <div class="card-content">
-                <h3>Adventure Tourism</h3>
-                <p>
-                  Himalayan treks, wildlife safaris, and adrenaline-fueled
-                  escapades.
-                </p>
+            <div class="tourism-type-card animate-on-scroll">
+              <div class="tourism-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1607914651332-0a392b3d65d4?q=80&w=1974"
+                  alt="An elegant wedding setup in a palace"
+                />
               </div>
-            </div>
-            <div class="style-card animate-on-scroll">
-              <img
-                src="https://images.unsplash.com/photo-1594757657252-9a273760ab8a?q=80&w=1974"
-                alt="Agro Tourism"
-              />
-              <div class="card-content">
-                <h3>Agro Tourism</h3>
-                <p>
-                  Immerse yourself in the tranquility of spice plantations and
-                  organic farms.
-                </p>
-              </div>
-            </div>
-            <div
-              class="style-card coming-soon animate-on-scroll"
-              data-style="Wedding"
-            >
-              <span class="badge">Coming Soon</span>
-              <img
-                src="https://images.unsplash.com/photo-1607914651332-0a392b3d65d4?q=80&w=1974"
-                alt="Wedding Tourism"
-              />
-              <div class="card-content">
+              <div class="tourism-card-content">
                 <h3>Wedding Tourism</h3>
-                <p>From royal palace ceremonies to serene beach vows.</p>
+                <a href="#" class="btn-explore">Explore</a>
               </div>
             </div>
-            <div
-              class="style-card coming-soon animate-on-scroll"
-              data-style="Cultural Heritage"
-            >
-              <span class="badge">Coming Soon</span>
-              <img
-                src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071"
-                alt="Cultural Heritage"
-              />
-              <div class="card-content">
-                <h3>Cultural Heritage</h3>
-                <p>
-                  Private tours of ancient forts, temples, and timeless
-                  traditions.
-                </p>
+
+            <div class="tourism-type-card animate-on-scroll">
+              <div class="tourism-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1593396495542-0542337d0044?q=80&w=1974"
+                  alt="A person trekking in the mountains"
+                />
+              </div>
+              <div class="tourism-card-content">
+                <h3>Adventure</h3>
+                <a href="#" class="btn-explore">Explore</a>
+              </div>
+            </div>
+
+            <div class="tourism-type-card animate-on-scroll">
+              <div class="tourism-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1594757657252-9a273760ab8a?q=80&w=1974"
+                  alt="Lush green tea plantation"
+                />
+              </div>
+              <div class="tourism-card-content">
+                <h3>Agriculture Tourism</h3>
+                <a href="#" class="btn-explore">Explore</a>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section class="interactive-map">
+      <!-- <section id="featured-tours" class="featured-tours">
         <div class="container">
-          <h2 class="section-title animate-on-scroll">Discover Our India</h2>
-          <p class="section-subtitle animate-on-scroll">
-            From the soaring Himalayas to the tranquil backwaters, our expertise
-            spans the subcontinent. Hover over a region to explore.
-          </p>
-          <div class="map-container animate-on-scroll">
-            <img
-              src="https://i.imgur.com/gcsDk1v.png"
-              alt="Stylized map of India"
-              class="map-image"
-            />
-            <div
-              class="map-dot"
-              data-region="Himalayas (Ladakh, Himachal)"
-              style="top: 15%; left: 45%"
-            ></div>
-            <div
-              class="map-dot"
-              data-region="Golden Triangle (Delhi, Agra, Jaipur)"
-              style="top: 35%; left: 42%"
-            ></div>
-            <div
-              class="map-dot"
-              data-region="Kerala's Backwaters"
-              style="top: 82%; left: 40%"
-            ></div>
-            <div
-              class="map-dot"
-              data-region="Goa & The Coast"
-              style="top: 65%; left: 35%"
-            ></div>
-            <div
-              class="map-dot"
-              data-region="Eastern India (Darjeeling, Sikkim)"
-              style="top: 38%; left: 80%"
-            ></div>
-            <div id="map-tooltip"></div>
+          <h2 class="section-title animate-on-scroll">Featured Tours</h2>
+          <div class="tours-grid">
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070"
+                  alt="Himalayan Trek"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Himalayan Adventure Trek</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 10 Days</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Ladakh</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $1200</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1547496615-3eb7e5720976?q=80&w=2070"
+                  alt="Rajasthan Palace"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Royal Rajasthan Tour</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 7 Days</span>
+                  <span
+                    ><i class="fas fa-map-marker-alt"></i> Jaipur &
+                    Udaipur</span
+                  >
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $950</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1593633397973-6c6e7a7a9f3b?q=80&w=1974"
+                  alt="Kerala Backwaters"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Kerala Backwater Escape</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 5 Days</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Alleppey</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $600</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1588785223788-563574938634?q=80&w=2070"
+                  alt="Goa Beach"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Goan Beach Paradise</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 4 Days</span>
+                  <span><i class="fas fa-map-marker-alt"></i> North Goa</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $450</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1621360123514-f5835948da43?q=80&w=2070"
+                  alt="Spice Plantation"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Spice Plantations of Coorg</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 3 Days</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Karnataka</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $300</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1605275038593-3e75a6c83556?q=80&w=1974"
+                  alt="Varanasi Ghats"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Spiritual Varanasi</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 3 Days</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Varanasi</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $400</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1545259742-b08e16794018?q=80&w=2070"
+                  alt="Wedding setup"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Udaipur Wedding Package</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> Custom</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Udaipur</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Inquire for Price</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1599590984518-360538a05553?q=80&w=2070"
+                  alt="Rishikesh"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Rishikesh Yoga Retreat</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 6 Days</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Rishikesh</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $700</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tour-card animate-on-scroll">
+              <div class="tour-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1598604921473-108202588133?q=80&w=1939"
+                  alt="Indian tiger"
+                />
+              </div>
+              <div class="tour-card-content">
+                <h3>Tiger Safari Adventure</h3>
+                <div class="tour-meta">
+                  <span><i class="fas fa-clock"></i> 4 Days</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Ranthambore</span>
+                </div>
+                <div class="tour-footer">
+                  <span class="tour-price">Starting from $850</span>
+                  <a href="#" class="btn-explore">View Tour</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
+      </section> -->
       <section class="difference">
         <div class="container">
-          <h2 class="section-title animate-on-scroll">The Aura Difference</h2>
+          <h2 class="section-title animate-on-scroll">
+            The IndiTourism Difference
+          </h2>
           <div class="difference-grid">
             <div class="diff-card animate-on-scroll">
               <i class="fas fa-map-marked-alt"></i>
@@ -202,7 +339,7 @@
           <div class="testimonial-card animate-on-scroll">
             <blockquote>
               “This wasn't a trip; it was an experience woven into the fabric of
-              Kerala. The attention to detail and private access Aura Journeys
+              Kerala. The attention to detail and private access IndiTourism
               provided was simply unparalleled. We are forever changed.”
             </blockquote>
             <div class="traveler-info">
@@ -211,6 +348,74 @@
                 alt="Happy traveler"
               />
               <cite>— Eleanor Vance, New York</cite>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <h2 class="section-title animate-on-scroll">Voices of IndiTourism</h2>
+          <div class="reviews-grid">
+            <div class="review-card animate-on-scroll">
+              <div class="star-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <h4>An Adventure of a Lifetime!</h4>
+              <p>
+                "The Himalayan trek was challenging but so rewarding. Our guide,
+                Lobsang, was incredible. The views, the culture... I've never
+                felt so alive. Thank you, IndiTourism!"
+              </p>
+              <div class="reviewer-info">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887"
+                  alt="Reviewer"
+                />
+                <span>Mark Chen, Australia</span>
+              </div>
+            </div>
+            <div class="review-card animate-on-scroll">
+              <div class="star-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <h4>Perfectly Peaceful.</h4>
+              <p>
+                "The agro-tourism stay in Coorg was a dream. Waking up to
+                birdsong and the smell of coffee is something I'll never forget.
+                It was the perfect escape from city life."
+              </p>
+              <div class="reviewer-info">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887"
+                  alt="Reviewer"
+                />
+                <span>Priya Patel, UK</span>
+              </div>
+            </div>
+            <div class="review-card animate-on-scroll">
+              <div class="star-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <h4>Seamless and Luxurious.</h4>
+              <p>
+                "From the airport pickup to the private tours of Rajasthan's
+                forts, every detail was handled flawlessly. It felt less like a
+                tour and more like traveling with a well-connected friend."
+              </p>
+              <div class="reviewer-info">
+                <img
+                  src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887"
+                  alt="Reviewer"
+                />
+                <span>David Schmidt, Germany</span>
+              </div>
             </div>
           </div>
         </div>
@@ -308,7 +513,7 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-column">
-            <h4>Aura Journeys</h4>
+            <h4>IndiTourism</h4>
             <p>
               Crafting authentic, bespoke travel experiences across the Indian
               subcontinent.
@@ -343,8 +548,8 @@
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2025 Aura Journeys. All Rights Reserved. Designed with
-            passion in Ludhiana.
+            &copy; 2025 IndiTourism. All Rights Reserved. Designed with passion
+            in Ludhiana.
           </p>
         </div>
       </div>
